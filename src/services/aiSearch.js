@@ -1,4 +1,4 @@
-const HF_API_KEY = "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";
+const HF_API_KEY = "";
 const MODEL_URL = "https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2";
 
 let cache = {};
