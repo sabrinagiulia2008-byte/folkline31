@@ -1,10 +1,10 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React from 'react';
 
-export default function Messages() {
-  return (
-    <View style={{ flex: 1, backgroundColor: "#1B2632", justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ color: "#EEE9DF", fontSize: 20 }}>Messages</Text>
-    </View>
-  );
+
+export default function Messages(){
+return (
+<div style={{display:'flex',height:'100%',alignItems:'center',justifyContent:'center'}}>
+<h2 style={{color:'#EEE9DF'}}>Messages</h2>
+</div>
+);
 }

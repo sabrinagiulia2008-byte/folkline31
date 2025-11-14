@@ -1,45 +1,35 @@
-import React, { useEffect, useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import React, { useEffect, useState } from 'react';
 
-export default function Account() {
-  const [participation, setParticipation] = useState({});
+export default function Account(){
+  const [participation,setParticipation] = useState({});
 
-  useEffect(() => {
-    const load = () => {
-      const stored = localStorage.getItem("participation");
-      if (stored) setParticipation(JSON.parse(stored));
-    };
-    load();
-    const interval = setInterval(load, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  useEffect(()=>{
+    const stored = localStorage.getItem('participation');
+    if(stored) setParticipation(JSON.parse(stored));
+    const iv = setInterval(()=>{
+      const s = localStorage.getItem('participation');
+      if(s) setParticipation(JSON.parse(s));
+    },1000);
+    return ()=>clearInterval(iv);
+  },[]);
 
-  const participatingEvents = Object.keys(participation).filter(title => participation[title]);
+  const participatingEvents = Object.keys(participation).filter(t=>participation[t]);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Contul Meu</Text>
-      <Text style={styles.subtitle}>Evenimente la care participi:</Text>
-      {participatingEvents.length > 0 ? (
-        <ScrollView>
-          {participatingEvents.map(title => (
-            <View key={title} style={styles.item}>
-              <Text style={styles.text}>{title}</Text>
-            </View>
+    <div style={{padding:20}}>
+      <h2 style={{color:'#FFB162'}}>Contul Meu</h2>
+      <p style={{color:'#EEE9DF'}}>Evenimente la care participi:</p>
+      {participatingEvents.length>0 ? (
+        <div>
+          {participatingEvents.map(title=> (
+            <div key={title} style={{background:'#2C3B4D',padding:12,borderRadius:8,marginBottom:8}}>
+              <div style={{color:'#EEE9DF'}}>{title}</div>
+            </div>
           ))}
-        </ScrollView>
+        </div>
       ) : (
-        <Text style={styles.empty}>Nu participi la niciun eveniment încă.</Text>
+        <div className="empty">Nu participi la niciun eveniment încă.</div>
       )}
-    </View>
+    </div>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#1B2632", padding: 20 },
-  title: { fontSize: 24, fontWeight: "bold", color: "#FFB162", marginBottom: 20 },
-  subtitle: { fontSize: 18, color: "#EEE9DF", marginBottom: 15 },
-  item: { backgroundColor: "#2C3B4D", padding: 15, borderRadius: 10, marginBottom: 10 },
-  text: { color: "#EEE9DF" },
-  empty: { color: "#C9C1B1", fontStyle: "italic" },
-});

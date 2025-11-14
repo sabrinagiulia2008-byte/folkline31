@@ -1,10 +1,10 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React from 'react';
 
-export default function Home() {
-  return (
-    <View style={{ flex: 1, backgroundColor: "#1B2632", justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ color: "#FFB162", fontSize: 24 }}>🏠 Ecranul Home este vizibil!</Text>
-    </View>
-  );
+
+export default function Home(){
+return (
+<div style={{display:'flex',height:'100%',alignItems:'center',justifyContent:'center',flexDirection:'column'}}>
+<h1 style={{color:'#FFB162'}}>🏠 Ecranul Home este vizibil!</h1>
+</div>
+);
 }

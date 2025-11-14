@@ -1,6 +1,6 @@
 const storage = {};
 export default {
-  getItem: (key) => Promise.resolve(storage[key] || null),
-  setItem: (key, value) => { storage[key] = value; return Promise.resolve(); },
-  removeItem: (key) => { delete storage[key]; return Promise.resolve(); },
+  getItem: (k) => Promise.resolve(storage[k] || null),
+  setItem: (k,v) => { storage[k]=v; return Promise.resolve(); },
+  removeItem: (k) => { delete storage[k]; return Promise.resolve(); }
 };

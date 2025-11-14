@@ -1,10 +1,10 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React from 'react';
 
-export default function Add() {
-  return (
-    <View style={{ flex: 1, backgroundColor: "#1B2632", justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ color: "#EEE9DF", fontSize: 20 }}>Add</Text>
-    </View>
-  );
+
+export default function Add(){
+return (
+<div style={{display:'flex',height:'100%',alignItems:'center',justifyContent:'center'}}>
+<h2 style={{color:'#EEE9DF'}}>Add</h2>
+</div>
+);
 }

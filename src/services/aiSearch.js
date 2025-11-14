@@ -1,9 +1,6 @@
-const HF_API_KEY = "";
 const MODEL_URL = "https://router.huggingface.co/hf-inference/models/sentence-transformers/all-MiniLM-L6-v2";
-
 let cache = {};
 
-// Obține embedding-ul unui text folosind Hugging Face
 export const getEmbedding = async (text) => {
   if (!text?.trim()) return null;
   const key = text.trim();
@@ -11,23 +8,19 @@ export const getEmbedding = async (text) => {
 
   try {
     const res = await fetch(MODEL_URL, {
-      method: "POST",
-      headers: { 
-        "Authorization": `Bearer ${HF_API_KEY}`,
-        "Content-Type": "application/json"
-      },
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ inputs: key })
     });
     const data = await res.json();
     const emb = data?.[0];
     if (emb) cache[key] = emb;
     return emb;
-  } catch {
+  } catch (err) {
     return null;
   }
 };
 
-// Calcul cosine similarity între două embedding-uri
 export const cosineSimilarity = (a, b) => {
   if (!a || !b) return 0;
   let dot = 0, n1 = 0, n2 = 0;
