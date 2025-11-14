@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/folkline31/static/css/main.36245895.css",
-    "main.js": "/folkline31/static/js/main.1b85f019.js",
+    "main.js": "/folkline31/static/js/main.a4614413.js",
     "index.html": "/folkline31/index.html",
     "main.36245895.css.map": "/folkline31/static/css/main.36245895.css.map",
-    "main.1b85f019.js.map": "/folkline31/static/js/main.1b85f019.js.map"
+    "main.a4614413.js.map": "/folkline31/static/js/main.a4614413.js.map"
   },
   "entrypoints": [
     "static/css/main.36245895.css",
-    "static/js/main.1b85f019.js"
+    "static/js/main.a4614413.js"
   ]
 }
