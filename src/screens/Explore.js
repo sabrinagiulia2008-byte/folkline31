@@ -55,7 +55,7 @@ export default function Explore(){
       </div>
 
       <div style={{padding:10}}>
-        <iframe src="/map.html" title="map" style={{width:'100%',height:400,border:0}} />
+        <iframe src="%PUBLIC_URL%/map.html" title="map" style={{width:'100%',height:400,border:0}} />
       </div>
 
       {loading && <div style={{padding:20}}>Loading…</div>}

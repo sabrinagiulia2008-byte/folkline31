@@ -31,7 +31,7 @@ const highlightStyle = { fillColor: "#FFB162", color: "#1B2632", weight: 2, fill
 let selectedLayer = null;
 
 
-fetch("https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json")
+fetch("geo/countries.geo.json")
 .then((r) => r.json())
 .then((data) => {
 L.geoJSON(data, {
